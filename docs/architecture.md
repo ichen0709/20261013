@@ -249,6 +249,9 @@ flowchart LR
 | `notice` | 有人進來或離開 | SystemNotice |
 | `status` | 連線狀態改變 | ConnectionStatus |
 | `catchUp` | 重連後補上漏掉的訊息 | Message 的清單 |
+| `evicted` | 重連後發現代號已被別人使用,必須回到進入畫面 | 原因(`NICKNAME_TAKEN`) |
+
+另外,進入畫面在進入前就要顯示「目前 N 人在線上」,所以合約還有 `watchOnlineCount(callback)`:訂閱目前的線上人數。
 
 ### 5.3 重複與順序的規則
 
